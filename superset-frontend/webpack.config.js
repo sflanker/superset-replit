@@ -24,7 +24,6 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
 const {
   WebpackManifestPlugin,
@@ -275,7 +274,8 @@ const config = {
       },
     },
     usedExports: 'global',
-    minimizer: [new CssMinimizerPlugin(), '...'],
+    minimizer: [],
+    minimize: false,
   },
   resolve: {
     // resolve modules from `/superset_frontend/node_modules` and `/superset_frontend`
